@@ -31,11 +31,9 @@ namespace QuizDataValidationDemo.Controllers
         {
             return View();
         }
-        // Method for remote validation
         [AcceptVerbs("GET", "POST")]
         public IActionResult CheckUsername(string username)
         {
-            // Simulate checking username against a database
             var takenUsernames = new List<string> { "admin", "root", "system", "moderator", "user" };
             if (takenUsernames.Contains(username.ToLower()))
             {
